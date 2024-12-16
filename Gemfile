@@ -72,3 +72,5 @@ gem 'cancancan'
 gem 'draper'
 gem 'pundit'
 gem "sassc-rails"
+
+gem "grape", "~> 2.2"
