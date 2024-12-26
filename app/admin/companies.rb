@@ -11,6 +11,21 @@ ActiveAdmin.register Company do
       row :logo do |company|
         image_tag company&.logo
       end
+      
+      panel 'Templates' do
+        if company.templates.empty?
+          text_node 'Templates not found'
+          a 'Create one', href: new_admin_company_template_path(company.id)
+        else
+          table_for(company.templates, sortable: true) do
+            column :id
+            column :name
+            column :created_at
+            column :updated_at
+          end
+          a 'Add', href: new_admin_company_template_path(company.id)
+        end
+      end
     end
   end
   

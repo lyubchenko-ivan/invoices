@@ -74,3 +74,5 @@ gem 'pundit'
 gem "sassc-rails"
 
 gem "grape", "~> 2.2"
+gem 'docx'
+gem 'libreconv'

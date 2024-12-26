@@ -129,6 +129,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    docx (0.8.0)
+      nokogiri (~> 1.13, >= 1.13.0)
+      rubyzip (~> 2.0)
     draper (4.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -205,6 +208,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    libreconv (0.9.5)
     logger (1.6.3)
     loofah (2.23.1)
       crass (~> 1.0.2)
@@ -365,10 +369,12 @@ DEPENDENCIES
   capybara
   debug
   devise
+  docx
   draper
   grape (~> 2.2)
   importmap-rails
   jbuilder
+  libreconv
   pg (~> 1.1)
   puma (>= 5.0)
   pundit
