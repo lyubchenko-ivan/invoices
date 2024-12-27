@@ -11,7 +11,7 @@ module InvoiceServices
       convert_to_pdf
       clean_tmp_data
       
-      output_file
+      @invoice.file
     end
     
     private
@@ -36,8 +36,9 @@ module InvoiceServices
     end
     
     def convert_to_pdf
-      binding.irb
       Libreconv.convert(tmp_file, output_file)
+      @invoice = Invoice.create
+      @invoice.file.attach(io: output_file, filename: output_file.path)
     end
     
     def clean_tmp_data
@@ -49,7 +50,7 @@ module InvoiceServices
     end
 
     def output_file
-      "/tmp/#{base_output_filename}.pdf"
+      @output_file ||= Tempfile.new("#{base_output_filename}.pdf")
     end
     
     def base_output_filename

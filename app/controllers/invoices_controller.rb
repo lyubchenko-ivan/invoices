@@ -6,7 +6,7 @@ class InvoicesController < ApplicationController
                     .new(template: template, data: permitted_params[:data])
                     .call
     return render json: {
-      output_file: output_file
+      output_file: url_for(output_file)
     }
   end
 
