@@ -68,6 +68,7 @@ end
 
 gem 'activeadmin'
 gem 'devise'
+gem 'devise-jwt'
 gem 'cancancan'
 gem 'draper'
 gem 'pundit'
