@@ -1,0 +1,12 @@
+meta:
+  environment: ruby
+  toolchain:
+    name: bundle
+    version: 3.2.2
+build:
+  image: ruby:3.2.2
+run:
+  image: ruby:3.2.2
+  mainScript: rails s
+  persistenceMount: /data
+  containerPort: 80
