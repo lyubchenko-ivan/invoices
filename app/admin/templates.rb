@@ -11,6 +11,9 @@ ActiveAdmin.register Template do
     attributes_table_for(resource) do
       row :name
       row :company
+      row :placeholders do |template|
+        JSON.parse(template.placeholders)&.values&.flatten
+      end
       row :template do |template|
         a 'Download', href: url_for(template&.template_file) 
       end
