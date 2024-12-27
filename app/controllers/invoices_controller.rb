@@ -1,4 +1,15 @@
 class InvoicesController < ApplicationController
+  api :GET, '/users/:id'
+  param :template_id, :number, desc: 'id of the using template'
+  param :data, Hash, desc: 'Data for using template'
+  
+  error 404, 'Template not found'
+  error 500, 'Internal Issuses'
+
+  returns :code => 200 do
+    property :output_file, String, :desc => "Url to getting generated file"
+  end
+  
   def create
     return raise_not_found unless template
 
